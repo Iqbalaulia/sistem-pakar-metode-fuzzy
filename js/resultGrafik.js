@@ -71,7 +71,7 @@ var lineChartDataSatu = {
     // labels: ['0','5', '10','15', '20','25', '30','35','40','45', '50','55', '60','65','70','75','80','85','90','95','100'],
 
     datasets: [{
-        label: 'My First dataset',
+        label: 'Permintaan Kecil',
         borderColor: window.chartColors.red,
         backgroundColor: window.chartColors.red,
         fill: false,
@@ -81,11 +81,11 @@ var lineChartDataSatu = {
 
         yAxisID: 'y-axis-1',
     }, {
-        label: 'My Second dataset',
+        label: 'Permintaan Besar',
         borderColor: window.chartColors.blue,
         backgroundColor: window.chartColors.blue,
         fill: false,
-        data: [],
+        data: [0,0,0,0,0,0,0, hasilBesarPermintaan  ,1,1,1,1,1,1,1],
         yAxisID: 'y-axis-2'
     }]
 };
@@ -99,7 +99,7 @@ var lineChartDataSatu = {
             stacked: false,
             title: {
                 display: true,
-                text: 'Grafik Pertama'
+                text: 'Grafik Permintaan'
             },
             scales: {
                 yAxes: [{
@@ -127,20 +127,20 @@ var lineChartDataSatu = {
 var lineChartDataDua = {
     labels: ['0','500','1000','1500','2000','2500','3000','3500','4000','4500','5000','5500','6000','6500','7000'],
     datasets: [{
-        label: 'My First dataset',
+        label: 'Persediaan Terkecil',
         borderColor: window.chartColors.red,
         backgroundColor: window.chartColors.red,
         fill: false,
-        data: [],
+        data: [1,1,1,1,1,1,1, hasilPersediaanTerkecil ,0,0,0,0,0,0,0],
         // data: [6000,6000,6000, 6000, 6000,6000,5400,4800,4200,3600,3000,2400,1800,1200,600,0,0,0,0,0,0],
 
         yAxisID: 'y-axis-1',
     }, {
-        label: 'My Second dataset',
+        label: 'Persediaan Terbanyak',
         borderColor: window.chartColors.blue,
         backgroundColor: window.chartColors.blue,
         fill: false,
-        data: [0,0,0,0,0,0,0, hasilBesarPermintaan  ,1,1,1,1,1,1,1],
+        data: [0,0,0,0,0,0,0, hasilPersediaanTerbanyak  ,1,1,1,1,1,1,1],
         
         yAxisID: 'y-axis-2'
     }]
@@ -155,7 +155,7 @@ var lineChartDataDua = {
             stacked: false,
             title: {
                 display: true,
-                text: 'Grafik Kedua'
+                text: 'Grafik Persediaan'
             },
             scales: {
                 yAxes: [{
@@ -422,7 +422,7 @@ var lineChartDataSatu = {
     // labels: ['0','5', '10','15', '20','25', '30','35','40','45', '50','55', '60','65','70','75','80','85','90','95','100'],
 
     datasets: [{
-        label: 'My First dataset',
+        label: 'Permintaan Kecil',
         borderColor: window.chartColors.red,
         backgroundColor: window.chartColors.red,
         fill: false,
@@ -432,11 +432,11 @@ var lineChartDataSatu = {
 
         yAxisID: 'y-axis-1',
     }, {
-        label: 'My Second dataset',
+        label: 'Permintaan Besar',
         borderColor: window.chartColors.blue,
         backgroundColor: window.chartColors.blue,
         fill: false,
-        data: [],
+        data: [0,0,0,0,0,0,0,  ,1,1,1,1,1,1,1],
         yAxisID: 'y-axis-2'
     }]
 };
@@ -450,7 +450,7 @@ var lineChartDataSatu = {
             stacked: false,
             title: {
                 display: true,
-                text: 'Grafik Pertama'
+                text: 'Grafik Permintaan'
             },
             scales: {
                 yAxes: [{
@@ -481,16 +481,16 @@ var lineChartDataSatu = {
 var lineChartDataDua = {
     labels: ['0','500','1000','1500','2000','2500','3000','3500','4000','4500','5000','5500','6000','6500','7000'],
     datasets: [{
-        label: 'My First dataset',
+        label: 'Persediaan Terkecil',
         borderColor: window.chartColors.red,
         backgroundColor: window.chartColors.red,
         fill: false,
-        data: [],
+        data: [1,1,1,1,1,1,1,  ,0,0,0,0,0,0,0],
         // data: [6000,6000,6000, 6000, 6000,6000,5400,4800,4200,3600,3000,2400,1800,1200,600,0,0,0,0,0,0],
 
         yAxisID: 'y-axis-1',
     }, {
-        label: 'My Second dataset',
+        label: 'Persediaan Terbanyak',
         borderColor: window.chartColors.blue,
         backgroundColor: window.chartColors.blue,
         fill: false,
@@ -509,7 +509,7 @@ var lineChartDataDua = {
             stacked: false,
             title: {
                 display: true,
-                text: 'Grafik Kedua'
+                text: 'Grafik Persediaan'
             },
             scales: {
                 yAxes: [{
