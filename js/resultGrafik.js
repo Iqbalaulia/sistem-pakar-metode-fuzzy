@@ -28,7 +28,6 @@ var valueRuleKeempat = 0;
 
 var hasil = 0;
 
-
 function hitung() {
 
     var x = document.getElementById('x').value;
@@ -64,6 +63,34 @@ function hitung() {
 
 
 // ------------------------------------
+    chartSatu.datasets[2].removePoint(0);
+    chartSatu.datasets[3].removePoint(0);
+    
+    chartDua.datasets[2].removePoint(0);
+    chartDua.datasets[3].removePoint(0);
+    
+    produksi.datasets[2].removePoint(0);
+    produksi.datasets[3].removePoint(0);
+    produksi.datasets[4].removePoint(0);
+    produksi.datasets[5].removePoint(0);
+
+
+    chartSatu.datasets[2].addPoint(x, hasilKecilPermintaan);
+    chartSatu.datasets[3].addPoint(x, hasilBesarPermintaan);
+
+    chartDua.datasets[2].addPoint(y, hasilPersediaanTerkecil);
+    chartDua.datasets[3].addPoint(y, hasilPersediaanTerbanyak);
+
+    produksi.datasets[2].addPoint(totalRulePertamaBanget, valueRulePertama);
+    produksi.datasets[3].addPoint(totalRuleKeduaBanget, valueRuleKedua);
+    produksi.datasets[4].addPoint(totalRuleKetigaBanget, valueRuleKetiga);
+    produksi.datasets[5].addPoint(totalRuleKeempatBanget, valueRuleKeempat);
+    
+    chartSatu.update();
+    chartDua.update();
+    produksi.update();
+/*    
+    produksi
 
 
 var lineChartDataSatu = {
@@ -235,7 +262,7 @@ var lineChartData = {
                 }],
             }
         }
-    });
+    });*/
 
 // ------------------------------------
 
@@ -360,7 +387,126 @@ function cekRangeInputY(minPersediaan, maxPersediaan, inputanY) {
     }
 }
 
+ 
+   var ctx = document.getElementById('DataSatu').getContext('2d');
+    var chartSatu = new Chart(ctx).Scatter(
+        [
+            {
+                label : 'Minimum',
+                strokeColor : '#FF0000',
+                pointStrokeColor : '#FF0000',
+                data : [
+                        {x:minPermintaan, y:1},
+                        {x:maxPermintaan, y:0}
+                ]
+            },
+            {
+                label : 'Maximum',
+                strokeColor : '#FF00FF',
+                pointStrokeColor : '#FF00FF',
+                data : [
+                        {x:minPermintaan, y:0},
+                        {x:maxPermintaan, y:1}
+                ]
+            },
+            {
+                label : 'Input Minimum',
+                strokeColor : '#FFFF00',
+                pointStrokeColor : '#FFFF00',
+            },
+            {
+                label : 'Input Maximum',
+                strokeColor : '#00FFFF',
+                pointStrokeColor : '#00FFFF',
+            }
+        ],{
+            responsive : true
+        }
+    );
 
+    var ctx = document.getElementById('DataDua').getContext('2d');
+    var chartDua = new Chart(ctx).Scatter(
+        [
+            {
+                label : 'Minimum',
+                strokeColor : '#FF0000',
+                pointStrokeColor : '#FF0000',
+                data : [
+                        {x:minPersediaan, y:1},
+                        {x:maxPersediaan, y:0}
+                ]
+            },
+            {
+                label : 'Maximum',
+                strokeColor : '#FF00FF',
+                pointStrokeColor : '#FF00FF',
+                data : [
+                        {x:minPersediaan, y:0},
+                        {x:maxPersediaan, y:1}
+                ]
+            },
+            {
+                label : 'Input Minimum',
+                strokeColor : '#FFFF00',
+                pointStrokeColor : '#FFFF00',
+            },
+            {
+                label : 'Input Maximum',
+                strokeColor : '#00FFFF',
+                pointStrokeColor : '#00FFFF',
+            },
+        ],{
+            responsive : true
+        }
+    );
+
+    var ctx = document.getElementById('canvas').getContext('2d');
+    var produksi = new Chart(ctx).Scatter(
+        [
+            {
+                label : 'Minimum',
+                strokeColor : '#FF0000',
+                pointStrokeColor : '#FF0000',
+                data : [
+                        {x:minProduksi, y:1},
+                        {x:maxProduksi, y:0}
+                ]
+            },
+            {
+                label : 'Maximum',
+                strokeColor : '#FF00FF',
+                pointStrokeColor : '#FF00FF',
+                data : [
+                        {x:minProduksi, y:0},
+                        {x:maxProduksi, y:1}
+                ]
+            },
+            {
+                label : 'Permintaan Minimum',
+                strokeColor : '#FFFF00',
+                pointStrokeColor : '#FFFF00',
+            },
+            {
+                label : 'Permintaan Maximum',
+                strokeColor : '#00FFFF',
+                pointStrokeColor : '#00FFFF',
+            },
+            {
+                label : 'Persediaan Minimum',
+                strokeColor : '#F0F0F0',
+                pointStrokeColor : '#F0F0F0',
+            },
+            {
+                label : 'Persediaan Maximum',
+                strokeColor : '#0F0F0F',
+                pointStrokeColor : '#0F0F0F',
+            }
+        ],{
+            responsive : true
+        }
+    );
+
+/*
 var lineChartData = {
     labels: ['0','500','1000','1500','2000','2500','3000','3500','4000','4500','5000','5500','6000','6500','7000'],
     datasets: [{
@@ -531,7 +677,7 @@ var lineChartDataDua = {
             }
         }
     });
-
+*/
 
 
 
